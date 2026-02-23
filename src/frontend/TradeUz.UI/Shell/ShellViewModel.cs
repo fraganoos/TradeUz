@@ -4,6 +4,7 @@ using TradeUz.UI.Pages.Dashboard;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System;
+using Avalonia.Controls;
 
 namespace TradeUz.UI.Shell
 {
@@ -50,6 +51,13 @@ namespace TradeUz.UI.Shell
                     .MakeGenericMethod(pageType);
                 method.Invoke(_navigation, null);
             }
+        }
+        
+        public ShellViewModel()
+        {
+            if (!Design.IsDesignMode)
+                throw new InvalidOperationException(
+                    "This constructor is for design-time only.");
         }
         #region Commands
 
