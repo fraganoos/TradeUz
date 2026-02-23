@@ -1,7 +1,6 @@
 ﻿using System;
 using Avalonia;
-
-namespace TradeUz.UI.App
+namespace TradeUz.UI.Bootstrap
 {
     internal class Program
     {
@@ -9,11 +8,11 @@ namespace TradeUz.UI.App
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
         // yet and stuff might break.
         [STAThread]
-        public static void Main(string[] args) => BuildTradeUz()
+        public static void Main(string[] args) => BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
 
         // Avalonia configuration, don't remove; also used by visual designer.
-        public static AppBuilder BuildTradeUz()
+        public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .WithInterFont()

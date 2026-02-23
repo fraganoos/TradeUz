@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using TradeUz.UI.Navigation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using TradeUz.UI.Pages.Dashboard;
@@ -10,7 +9,7 @@ using TradeUz.UI.Shell;
 using TradeUz.UI.Core;
 using TradeUz.UI.Infrastructure.Theming;
 
-namespace TradeUz.UI.App
+namespace TradeUz.UI.Bootstrap
 {
     public partial class App : Application
     {

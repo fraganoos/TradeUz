@@ -9,7 +9,6 @@
         x:DataType="vm:ShellViewModel"
         WindowStartupLocation="CenterScreen"
         Title="TradeUz.UI">
-    <Design.DataContext><vm:ShellViewModel/></Design.DataContext>
     <Grid Background="{DynamicResource ResourceKey=PrimaryBackground}" ColumnDefinitions="Auto, *" >
         <Border Grid.Column="0" Padding="0" Background="{DynamicResource ResourceKey=PrimaryGradientBackground}" >
             <Grid RowDefinitions="*, Auto">

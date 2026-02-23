@@ -7,7 +7,7 @@ using TradeUz.UI.Pages.Orders;
 using TradeUz.UI.Shell;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace TradeUz.UI.App
+namespace TradeUz.UI.Bootstrap
 {
     public static class ServiceCollectionExtensions
     {
