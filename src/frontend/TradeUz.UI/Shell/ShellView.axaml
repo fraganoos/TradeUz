@@ -1,0 +1,55 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TradeUz.UI.Shell"
+        mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="700"
+        Width="1280" Height="700"
+        x:Class="TradeUz.UI.Shell.ShellView"
+        x:DataType="vm:ShellViewModel"
+        Title="TradeUz.UI">
+    <Design.DataContext><vm:ShellViewModel/></Design.DataContext>
+    <Grid Background="{DynamicResource ResourceKey=PrimaryBackground}" ColumnDefinitions="Auto, *" >
+        <Border Grid.Column="0" Padding="0" Background="{DynamicResource ResourceKey=PrimaryGradientBackground}" >
+            <Grid RowDefinitions="*, Auto">
+                <StackPanel Grid.Row="0" Spacing="2" >
+                    <Image PointerPressed="Image_PointerPressed" 
+                        Source="{SvgImage /Assets/Images/logo_Vendora.svg}" Width="220" 
+                            IsVisible="{Binding SideMenuExpanded}" Margin="8" />
+                    <Image PointerPressed="Image_PointerPressed" HorizontalAlignment="Left"
+                        Source="{SvgImage /Assets/Images/icon_Vendora.svg}" Width="50" 
+                            IsVisible="{Binding !SideMenuExpanded}" Margin="4" />
+                    <RadioButton Classes="ModernRadio" GroupName="SidebarMenu" 
+                                 Tag="{DynamicResource AccentHome}"
+                                 Command="{Binding NavigateCommand}"
+                                 CommandParameter="Dashboard">
+				        <StackPanel Orientation="Horizontal" Spacing="15">
+					        <Image Classes="Icon" Source="{DynamicResource IconHome}" Margin="10,0"/>
+                            <TextBlock Text="Bosh saxifa" IsVisible="{Binding SideMenuExpanded}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                     </RadioButton>
+                    <RadioButton Classes="ModernRadio" GroupName="SidebarMenu" 
+                                 Tag="{DynamicResource AccentTrade}"
+                                 Command="{Binding NavigateCommand}"
+                                 CommandParameter="Orders">
+				        <StackPanel Orientation="Horizontal" Spacing="15">
+					        <Image Classes="Icon" Source="{DynamicResource IconTrade}" Margin="10,0"/>
+                            <TextBlock Text="Savdo bo'limi" IsVisible="{Binding SideMenuExpanded}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                     </RadioButton>
+
+                </StackPanel>
+                <StackPanel Grid.Row="1" Spacing="2" Margin="0,20,0,20" Orientation="Vertical">
+                    <Button Content="Theme"
+                        Command="{Binding ToggleThemeCommand}" />
+                </StackPanel>
+            </Grid>
+            
+        </Border>
+        <!-- Content Area -->
+        <ContentControl Grid.Column="1"
+                        Content="{Binding Router.Current}" />
+
+    </Grid>
+
+</Window>

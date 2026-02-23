@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36908.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{D6E85E7F-2D03-424B-B155-531809C46A68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{721F1538-2D6E-442B-BF1F-B6ED55F16CE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeUz.UI", "..\TradeUz\src\frontend\TradeUz.UI\TradeUz.UI.csproj", "{186CB329-BA57-2761-A84E-D1B7F5093205}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{186CB329-BA57-2761-A84E-D1B7F5093205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186CB329-BA57-2761-A84E-D1B7F5093205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186CB329-BA57-2761-A84E-D1B7F5093205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186CB329-BA57-2761-A84E-D1B7F5093205}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6E85E7F-2D03-424B-B155-531809C46A68} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{721F1538-2D6E-442B-BF1F-B6ED55F16CE5} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
+		{186CB329-BA57-2761-A84E-D1B7F5093205} = {D6E85E7F-2D03-424B-B155-531809C46A68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBF66878-DADE-473E-A529-DE0490A68122}
+	EndGlobalSection
+EndGlobal

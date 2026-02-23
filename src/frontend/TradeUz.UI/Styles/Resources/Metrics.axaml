@@ -1,0 +1,15 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Sizes -->
+    <x:Double x:Key="IconSize">24</x:Double>
+
+    <!-- Radius -->
+    <CornerRadius x:Key="RadiusSmall">6</CornerRadius>
+    <CornerRadius x:Key="RadiusMedium">10</CornerRadius>
+
+    <!-- Padding -->
+    <Thickness x:Key="PaddingButton">12,8</Thickness>
+
+</ResourceDictionary>

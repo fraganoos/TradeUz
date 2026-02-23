@@ -1,0 +1,104 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="2" Width="250">
+        <StackPanel Spacing="12">
+            <RadioButton Classes="ModernRadio" GroupName="group1" Tag="{DynamicResource AccentTrade}">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<Image Classes="Icon" Source="{DynamicResource IconTrade}"/>
+                    <TextBlock Text="Radio Button 1"/>
+                </StackPanel>
+            </RadioButton>
+            <RadioButton Classes="ModernRadio" Content="Modern Radio Button 2" GroupName="group1" IsChecked="True"
+                         Tag="{DynamicResource AccentBlue}"/>
+            <RadioButton Classes="ModernRadio" GroupName="group1" IsEnabled="False" Tag="{DynamicResource AccentBlue}">
+				<StackPanel Orientation="Horizontal" Spacing="10">
+					<Image Classes="Icon" Source="{DynamicResource IconTrade}"/>
+                    <TextBlock Text="Radio Button 1"/>
+                </StackPanel>
+
+            </RadioButton>
+        </StackPanel>
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+    <!-- MODERN RADIO BUTTON -->
+    <Style Selector="RadioButton.ModernRadio">
+
+        <!-- Layout -->
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Padding" Value="{DynamicResource PaddingButton}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+
+        <!-- Colors -->
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderDefault}"/>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
+
+        <!-- Template -->
+        <Setter Property="Template">
+            <ControlTemplate>
+
+                <Border x:Name="PART_Border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}">
+
+                    <!-- Content -->
+                    <ContentPresenter
+                        Content="{TemplateBinding Content}"
+                        Margin="10,2,0,0"
+                        FontWeight="Medium"
+                        FontSize="16"
+                        VerticalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!--Animations and Transitions-->
+    <Style Selector="RadioButton.ModernRadio /template/ ContentPresenter">
+        <Setter Property="Transitions">
+			<Transitions>
+                <BrushTransition Property="Foreground" Duration="0:0:0.5"/>
+                <BrushTransition Property="Background" Duration="0:0:0.5"/>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.5"/>
+            </Transitions>
+        </Setter>
+    </Style>
+    <Style Selector="RadioButton.ModernRadio.Transparent:pointerover /template/ ContentPresenter">
+        <Setter Property="RenderTransform" Value="scale(1.2)"/>
+    </Style>
+
+    <!-- Hover -->
+    <Style Selector="RadioButton.ModernRadio:pointerover /template/ Border">
+        <Setter Property="BorderThickness" Value="3,1,1,1"/>
+        <Setter Property="BorderBrush" Value="{TemplateBinding Tag}"/>
+    </Style>
+
+    <Style Selector="RadioButton.ModernRadio:pointerover /template/ContentPresenter">
+		<Setter Property="Foreground" Value="{TemplateBinding Tag}"/>
+    </Style>
+
+    <!-- Checked (ACTIVE STATE) -->
+    <Style Selector="RadioButton.ModernRadio:checked /template/Border">
+        <Setter Property="BorderThickness" Value="6,0,0,0"/>
+        <Setter Property="BorderBrush" Value="{TemplateBinding Tag}"/>
+        <Setter Property="Background" Value="{DynamicResource SurfaceActive}"/>
+        <!--<Setter Property="Background" Value="#1F2347"/>-->
+    </Style>
+    <Style Selector="RadioButton.ModernRadio:checked /template/ContentPresenter">
+		<Setter Property="Foreground" Value="{TemplateBinding Tag}"/>
+    </Style>
+
+    <!-- Disabled -->
+    <Style Selector="RadioButton.ModernRadio:disabled">
+        <Setter Property="Opacity" Value="0.5"/>
+    </Style>
+
+
+
+</Styles>

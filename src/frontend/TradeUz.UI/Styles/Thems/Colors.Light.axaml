@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <!-- ================= BACKGROUNDS ================= -->
+
+    <!-- �������� ��� ���������� -->
+    <SolidColorBrush x:Key="PrimaryBackground" Color="#F4F6FB"/>
+
+    <!-- Hover ��� ������� �������� -->
+    <SolidColorBrush x:Key="PrimaryHoverBackground" Color="#E6E9F4"/>
+
+    <!-- ����������� -->
+    <SolidColorBrush x:Key="SurfaceDefault" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="SurfaceHover" Color="#F1F3FA"/>
+    <SolidColorBrush x:Key="SurfaceActive" Color="#E8ECF8"/>
+
+    <!-- ================= BORDERS ================= -->
+
+    <SolidColorBrush x:Key="BorderDefault" Color="#C7CBDD"/>
+
+    <!-- ================= TEXT ================= -->
+
+    <SolidColorBrush x:Key="PrimaryForeground" Color="#1C1E26"/>
+    <SolidColorBrush x:Key="SecondaryForeground" Color="#5F6373"/>
+    <SolidColorBrush x:Key="PrimaryHoverForeground" Color="#000000"/>
+
+    <!-- ================= GRADIENTS ================= -->
+
+    <LinearGradientBrush x:Key="PrimaryGradientBackground"
+                         StartPoint="0%,0%"
+                         EndPoint="100%,0%">
+        <GradientStop Color="#c1edea" Offset="0"/>
+        <GradientStop Color="#eefff9" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!-- ================= ACCENTS ================= -->
+
+    <!-- �������� ������� -->
+    <SolidColorBrush x:Key="AccentTrade" Color="#F39C12"/>
+    <SolidColorBrush x:Key="AccentHome" Color="#6FBF2E"/>
+
+    <!-- ����� ������� -->
+    <SolidColorBrush x:Key="AccentBlue" Color="#3F6FFF"/>
+    <SolidColorBrush x:Key="AccentGreen" Color="#2FBF71"/>
+</ResourceDictionary>

@@ -1,0 +1,57 @@
+﻿using Avalonia;
+using Avalonia.Styling;
+using TradeUz.UI.Infrastructure.Storage;
+
+namespace TradeUz.UI.Infrastructure.Theming;
+
+public class ThemeService : IThemeService
+{
+    private const string ThemeKey = "AppTheme";
+    private readonly ILocalSettingsService _settings;
+
+    public ThemeService(ILocalSettingsService settings)
+    {
+        _settings = settings;
+    }
+
+    public ThemeVariant CurrentTheme =>
+        Application.Current?.RequestedThemeVariant ?? ThemeVariant.Light;
+
+    public void Initialize()
+    {
+        if (Application.Current == null)
+            return;
+
+        var saved = _settings.Load<string>(ThemeKey);
+
+        if (saved == "Dark")
+            Apply(ThemeVariant.Dark);
+        else
+            Apply(ThemeVariant.Light);
+    }
+
+    public void SetLight() => Apply(ThemeVariant.Light);
+
+    public void SetDark() => Apply(ThemeVariant.Dark);
+
+    public void Toggle()
+    {
+        var next =
+            CurrentTheme == ThemeVariant.Dark
+                ? ThemeVariant.Light
+                : ThemeVariant.Dark;
+
+        Apply(next);
+    }
+
+    private void Apply(ThemeVariant variant)
+    {
+        if (Application.Current == null)
+            return;
+
+        Application.Current.RequestedThemeVariant = variant;
+
+        _settings.Save(ThemeKey,
+            variant == ThemeVariant.Dark ? "Dark" : "Light");
+    }
+}
